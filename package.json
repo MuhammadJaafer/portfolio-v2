@@ -14,9 +14,13 @@
     "@types/react-dom": "18.2.4",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
+    "framer-motion": "^10.12.10",
     "next": "13.4.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "sass": "^1.62.1"
   }
 }
