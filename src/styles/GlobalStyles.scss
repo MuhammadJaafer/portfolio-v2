@@ -11,6 +11,10 @@
   --secondary: #e31b6d;
   --tertiary: #ffffff;
   --tertiary-dark: #a9bbd3;
+  --light: 300;
+  --medium: 400;
+  --bold: 500;
+  --bolder: 600;
 }
 .light {
   --primary: #ffffff;
@@ -19,6 +23,10 @@
   --secondary: #e31b6d;
   --tertiary: #111821;
   --tertiary-dark: #1c2a3d;
+  --light: 400;
+  --medium: 500;
+  --bold: 600;
+  --bolder: 700;
 }
 .dark {
   /* Your default theme */
@@ -28,6 +36,10 @@
   --secondary: #e31b6d;
   --tertiary: #ffffff;
   --tertiary-dark: #a9bbd3;
+  --light: 300;
+  --medium: 400;
+  --bold: 500;
+  --bolder: 600;
 }
 
 html,
@@ -39,7 +51,7 @@ html {
   font-size: 62.5%; // 1rem = 10px
 }
 body {
-  font-weight: 400;
+  font-weight: var(--medium);
   font-size: 2rem;
   color: var(--tertiary);
   background: var(--primary);

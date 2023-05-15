@@ -63,10 +63,6 @@ const clipVariants = {
 type NavbarProps = {};
 
 const Navbar: React.FC<NavbarProps> = () => {
-  const { theme, setTheme } = useTheme();
-  useEffect(() => {
-    console.log(theme);
-  }, [theme]);
   return (
     <>
       <nav className={`${styles.navbar}`}>
@@ -86,12 +82,14 @@ const Navbar: React.FC<NavbarProps> = () => {
           variants={clipVariants}
           initial="start"
           animate="end"
-          className={`${styles.clip}`}
+          className={`${styles.navbar_container}`}
         >
-          <div className={`${styles.navbar_left}`}>
-            <h1 className={`${styles.navbar_left_logo}`}>Muhammad Jaafar</h1>
+          <div className={`${styles.navbar_container_left}`}>
+            <h1 className={`${styles.navbar_container_left_logo}`}>
+              Muhammad Jaafar
+            </h1>
           </div>
-          <div className={`${styles.navbar_right}`}>
+          <div className={`${styles.navbar_container_right}`}>
             <Right />
           </div>
         </motion.div>
