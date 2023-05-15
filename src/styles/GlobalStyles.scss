@@ -49,6 +49,9 @@ body {
 }
 html {
   font-size: 62.5%; // 1rem = 10px
+  @media screen and (max-width: 1000px) {
+    font-size: 50%;
+  }
 }
 body {
   font-weight: var(--medium);

@@ -13,7 +13,7 @@
       display: block;
       &_logo {
         font-weight: 400;
-        font-size: 2.5rem;
+        font-size: 2.3rem;
       }
     }
     &_right {
@@ -24,20 +24,21 @@
         display: flex;
         justify-content: space-between;
         &_item {
+          font-size: 1.9rem;
           cursor: pointer;
           &_toggler {
             cursor: auto;
             display: flex;
             gap: 3rem;
             &_theme {
-              width: 3rem;
-              height: 3rem;
+              width: 2.8rem;
+              height: 2.8rem;
               cursor: pointer;
               & svg {
                 width: 100%;
                 height: 100%;
                 color: var(--tertiary);
-                vertical-align: middle;
+
                 transition: all 0.2s;
                 &:hover {
                   filter: drop-shadow(0px 0px 3px var(--tertiary));
@@ -46,13 +47,13 @@
             }
             &_sound {
               cursor: pointer;
-              width: 3rem;
-              height: 3rem;
+              width: 2.8rem;
+              height: 2.8rem;
               & svg {
                 width: 100%;
                 height: 100%;
                 color: var(--tertiary);
-                vertical-align: middle;
+
                 transition: all 0.2s;
                 &:hover {
                   filter: drop-shadow(0px 0px 3px var(--tertiary));
