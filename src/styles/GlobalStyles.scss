@@ -1,6 +1,33 @@
 * {
-  margin: 0;
+  box-sizing: border-box;
   padding: 0;
+  margin: 0;
+}
+:root {
+  /* Your default theme */
+  --primary: #111821;
+  --primary-dark: #223247;
+  --primary-light: #2e4a6f;
+  --secondary: #e31b6d;
+  --tertiary: #ffffff;
+  --tertiary-dark: #a9bbd3;
+}
+.light {
+  --primary: #ffffff;
+  --primary-dark: #1f4578;
+  --primary-light: #afd2ff;
+  --secondary: #e31b6d;
+  --tertiary: #111821;
+  --tertiary-dark: #1c2a3d;
+}
+.dark {
+  /* Your default theme */
+  --primary: #111821;
+  --primary-dark: #223247;
+  --primary-light: #2e4a6f;
+  --secondary: #e31b6d;
+  --tertiary: #ffffff;
+  --tertiary-dark: #a9bbd3;
 }
 
 html,
@@ -14,6 +41,9 @@ html {
 body {
   font-weight: 400;
   font-size: 2rem;
+  color: var(--tertiary);
+  background: var(--primary);
+  transition: all 0.3s;
 }
 
 input,
@@ -23,4 +53,8 @@ a {
   font-family: inherit;
   text-decoration: none;
   color: inherit;
+}
+ul,
+ol {
+  list-style: none;
 }
