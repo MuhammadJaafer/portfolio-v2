@@ -4,6 +4,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import styles from "../../../styles/components/Navbar.module.scss";
+import Logo from "./Logo";
 import Right from "./Right";
 const circleVariants = {
   start: {

@@ -5,12 +5,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   &_left {
     display: block;
     &_logo {
-      font-weight: 400;
-      font-size: 2.3rem;
+      cursor: pointer;
+      position: relative;
+      font-weight: var(--light);
+      font-size: 2.5rem;
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        bottom: 0.5rem;
+        left: 50%;
+        transform: translate(-50%);
+        width: 50%;
+        height: 0%;
+        border-radius: 50%;
+        background: var(--secondary);
+        filter: blur(0.5rem);
+        transition: all 0.3s ease-out;
+      }
+      &:hover::after {
+        height: 25%;
+        width: 110%;
+      }
     }
   }
   &_right {
@@ -32,15 +51,16 @@
           bottom: 0.5rem;
           left: 50%;
           transform: translate(-50%);
-          width: 100%;
+          width: 50%;
           height: 0%;
           border-radius: 50%;
           background: var(--secondary);
           filter: blur(0.5rem);
-          transition: all 0.25s;
+          transition: all 0.3s ease-out;
         }
         &:hover::after {
           height: 30%;
+          width: 140%;
         }
         &_toggler {
           cursor: auto;
@@ -57,7 +77,7 @@
 
               transition: all 0.2s;
               &:hover {
-                filter: drop-shadow(0px 0px 3px var(--tertiary));
+                filter: drop-shadow(0px 0px 5px var(--tertiary));
               }
             }
           }
@@ -72,7 +92,7 @@
 
               transition: all 0.2s;
               &:hover {
-                filter: drop-shadow(0px 0px 3px var(--tertiary));
+                filter: drop-shadow(0px 0px 5px var(--tertiary));
               }
             }
           }
