@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "../../../styles/components/Navbar.module.scss";
 import Right from "./Right";
 const circleVariants = {
@@ -63,6 +63,7 @@ const clipVariants = {
 type NavbarProps = {};
 
 const Navbar: React.FC<NavbarProps> = () => {
+  const ContainerRef = useRef<HTMLDivElement>(null);
   return (
     <>
       <nav className={`${styles.navbar}`}>
@@ -79,17 +80,28 @@ const Navbar: React.FC<NavbarProps> = () => {
           className={`${styles.line}`}
         ></motion.div>
         <motion.div
+          ref={ContainerRef}
           variants={clipVariants}
           initial="start"
           animate="end"
-          className={`${styles.navbar_container}`}
+          className={`${styles.clip}`}
+          onAnimationComplete={() => {
+            if (!ContainerRef.current) return;
+            console.log(ContainerRef.current.parentNode);
+            const parent = ContainerRef.current.parentNode;
+            while (ContainerRef.current.firstChild) {
+              parent?.insertBefore(
+                ContainerRef.current.firstChild,
+                ContainerRef.current
+              );
+            }
+            ContainerRef.current.remove();
+          }}
         >
-          <div className={`${styles.navbar_container_left}`}>
-            <h1 className={`${styles.navbar_container_left_logo}`}>
-              Muhammad Jaafar
-            </h1>
+          <div className={`${styles.navbar_left}`}>
+            <h1 className={`${styles.navbar_left_logo}`}>Muhammad Jaafar</h1>
           </div>
-          <div className={`${styles.navbar_container_right}`}>
+          <div className={`${styles.navbar_right}`}>
             <Right />
           </div>
         </motion.div>
