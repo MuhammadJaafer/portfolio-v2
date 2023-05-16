@@ -41,13 +41,16 @@
   --bold: 500;
   --bolder: 600;
 }
-
+* {
+  cursor: none !important;
+}
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
 }
 html {
+  user-select: none;
   font-size: 62.5%; // 1rem = 10px
   @media screen and (max-width: 1000px) {
     font-size: 50%;

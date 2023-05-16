@@ -1,8 +1,9 @@
+import Cursor from "@/components/Layout/Cursor";
+import Links from "@/components/Layout/Links";
 import Navbar from "@/components/Navbar/Desktop/Navbar";
 import Providers from "@/providers/Providers";
 import { Quicksand } from "next/font/google";
 import "../styles/GlobalStyles.scss";
-import LinkStyles from "../styles/Layout/Links.module.scss";
 import styles from "../styles/Layout/MainLayout.module.scss";
 const quicksand = Quicksand({ subsets: ["latin"] });
 
@@ -21,7 +22,8 @@ export default function RootLayout({
         <main className={styles.layout}>
           <Providers>
             <Navbar />
-
+            <Cursor />
+            <Links />
             {children}
           </Providers>
         </main>

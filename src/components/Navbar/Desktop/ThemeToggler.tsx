@@ -1,12 +1,13 @@
 "use client";
 import { Icon } from "@iconify/react";
 import { useTheme } from "next-themes";
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../../../styles/components/Navbar.module.scss";
 type ThemeTogglerProps = {};
 
 const ThemeToggler: React.FC<ThemeTogglerProps> = () => {
   const { theme, setTheme } = useTheme();
+
   return (
     <div className={`${styles.navbar_right_list_item_toggler}`}>
       <div

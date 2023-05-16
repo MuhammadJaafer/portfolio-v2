@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
+import { useRecoilState } from "recoil";
 import styles from "../../../styles/components/Navbar.module.scss";
 import Logo from "./Logo";
 import Right from "./Right";
+const animationDuration = 1.5;
 const circleVariants = {
   start: {
     width: 0,
@@ -17,7 +19,7 @@ const circleVariants = {
     height: [0, 20, 20, 0, 0],
 
     transition: {
-      duration: 2.5,
+      duration: animationDuration,
       times: [0, 0.2, 0.6, 0.6, 1],
       ease: "linear",
     },
@@ -27,14 +29,14 @@ const lineVariants = {
   start: {
     width: 0,
     height: "0%",
-    opacity: 1,
+    opacity: 1.5,
   },
   end: {
     width: ["0%", "0%", "100%", "100%", "0%"],
     height: ["0%", "0%", "0%", "105%", "0%"],
     opacity: [1, 1, 1, 0, 0],
     transition: {
-      duration: 2.5,
+      duration: animationDuration,
       times: [0, 0.2, 0.6, 0.999, 1],
       ease: "linear",
     },
@@ -54,7 +56,7 @@ const clipVariants = {
     ],
 
     transition: {
-      duration: 2.5,
+      duration: animationDuration,
       times: [0, 0.2, 0.65, 0.999, 1],
       ease: "linear",
     },
@@ -88,7 +90,6 @@ const Navbar: React.FC<NavbarProps> = () => {
           className={`${styles.clip}`}
           onAnimationComplete={() => {
             if (!ContainerRef.current) return;
-            console.log(ContainerRef.current.parentNode);
             const parent = ContainerRef.current.parentNode;
             while (ContainerRef.current.firstChild) {
               parent?.insertBefore(
