@@ -1,5 +1,6 @@
 "use client";
 import { heroData } from "@/db/main";
+import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
@@ -121,6 +122,33 @@ const textChildrenVariants = {
     },
   },
 };
+
+const arrowVariants = {
+  start: {
+    y: 0,
+  },
+  end: {
+    y: [-5, 5, -5],
+    transition: {
+      y: {
+        repeat: Infinity,
+        duration: 2,
+        ease: "easeInOut",
+      },
+    },
+  },
+};
+const scrollVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: delayTime,
+    },
+  },
+};
 const Hero: React.FC<HeroProps> = () => {
   return (
     <div className={`${styles.hero}`}>
@@ -211,7 +239,28 @@ const Hero: React.FC<HeroProps> = () => {
           ></motion.div>
         </motion.div>
       </div>
-      <div></div>
+      <motion.div
+        variants={scrollVariants}
+        initial="hidden"
+        animate="visible"
+        className={`${styles.hero_scroll}`}
+      >
+        <Icon
+          className={`${styles.hero_scroll_mouse}`}
+          icon={"iconamoon:mouse-thin"}
+        />
+        <motion.div
+          variants={arrowVariants}
+          initial="start"
+          animate="end"
+          className={`${styles.hero_scroll_arrow}`}
+        >
+          <Icon
+            className={`${styles.hero_scroll_arrow_svg}`}
+            icon={"ph:caret-double-down-thin"}
+          />
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

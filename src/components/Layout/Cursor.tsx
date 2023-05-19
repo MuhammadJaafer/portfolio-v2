@@ -6,7 +6,7 @@ type CursorProps = {};
 
 const Cursor: React.FC<CursorProps> = () => {
   const [isClicked, setIsClicked] = useState(false);
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
   const cursorRef = useRef<HTMLDivElement>(null);
