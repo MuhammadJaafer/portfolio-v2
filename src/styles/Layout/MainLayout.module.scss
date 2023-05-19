@@ -4,9 +4,9 @@
   max-width: 1920px;
   padding: 0 8rem;
   margin: 0 auto;
+  height: fit-content;
 }
 .cursor {
-  opacity: 0;
   width: 5rem;
   height: 5rem;
   background: transparent;
@@ -14,7 +14,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 200;
   pointer-events: none;
   border-radius: 50%;
 
@@ -33,6 +33,7 @@
 }
 .links {
   position: fixed;
+  z-index: 100;
   left: 0;
   bottom: 0;
   display: flex;

@@ -6,13 +6,11 @@ type CursorProps = {};
 
 const Cursor: React.FC<CursorProps> = () => {
   const [isClicked, setIsClicked] = useState(false);
+  const [show, setShow] = useState(false);
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
   const cursorRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    if (!cursorRef.current) return;
-    cursorRef.current.style.opacity = "1";
-  }, [cursorRef]);
+
   useEffect(() => {
     //inner circle get bigger while mouse down
     const handleMouseDown = () => {
@@ -22,10 +20,18 @@ const Cursor: React.FC<CursorProps> = () => {
     const handleMouseUp = () => {
       setIsClicked(false);
     };
-
+    //hide the cursor when the mouse out of the screen
+    const handleMouseEnter = () => {
+      console.log("mouse enter");
+      setShow(true);
+    };
+    const handleMouseLeave = () => {
+      setShow(false);
+    };
     window.addEventListener("mousedown", handleMouseDown);
     window.addEventListener("mouseup", handleMouseUp);
-
+    document.addEventListener("mouseenter", handleMouseEnter);
+    document.addEventListener("mouseleave", handleMouseLeave);
     // custom cursor movement
     const handleMouseMove = (event: MouseEvent) => {
       if (!cursorRef.current) return;
@@ -39,6 +45,8 @@ const Cursor: React.FC<CursorProps> = () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mouseup", handleMouseUp);
+      document.removeEventListener("mouseenter", handleMouseEnter);
+      document.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, [cursorX, cursorY]);
 
@@ -49,12 +57,14 @@ const Cursor: React.FC<CursorProps> = () => {
       style={{
         x: cursorX,
         y: cursorY,
+        opacity: show ? "1" : "0",
       }}
     >
       <motion.div
         style={{
           width: isClicked ? "2.5rem" : "0.7rem",
           height: isClicked ? "2.5rem" : "0.7rem",
+
           transition: "width 0.2s, height 0.2s",
         }}
         className={`${styles.cursor_inner}`}

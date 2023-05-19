@@ -1,0 +1,117 @@
+.hero {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  min-height: fit-content;
+  padding: 5rem 0;
+  padding-top: 8rem;
+  display: grid;
+  grid-template-columns: 1fr minmax(min-content, 45%);
+  align-items: center;
+  &_left {
+    position: relative;
+    &_container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      &_text {
+        font-weight: var(--light);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        font-size: 2.5rem;
+        &_expertise {
+          width: fit-content;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+          &_circle {
+            width: 1.5rem;
+            height: 1.5rem;
+            background: var(--secondary);
+            border-radius: 50%;
+          }
+        }
+      }
+      &_btn {
+        position: relative;
+        width: fit-content;
+        border: 2px solid var(--secondary);
+        padding: 0.5rem 1rem;
+        font-size: 2.8rem;
+        color: var(--secondary);
+        font-weight: var(--medium);
+        // transition: all 0.2s;
+        &:hover {
+          // box-shadow: 0.7rem 0.7rem 0px var(--secondary);
+          // transform: translate(-0.7rem, -0.7rem);
+        }
+      }
+    }
+    &_circle {
+      position: absolute;
+      top: 80%;
+      left: -10%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      height: 90%;
+      z-index: 1;
+      filter: blur(10rem);
+      background: var(--primary-light);
+      border-radius: 50%;
+    }
+  }
+  &_right {
+    position: relative;
+    // border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &_container {
+      display: flex;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      &_imgContainer {
+        position: relative;
+        z-index: 3;
+        aspect-ratio: 1 / 1;
+        height: 38rem;
+        background: var(--primary);
+        border: 3px solid var(--secondary);
+        // transform: rotate(-10deg);
+        overflow: hidden;
+        &_image {
+          transform: rotate(10deg) translate(0, 2rem);
+          object-fit: contain;
+          width: 100%;
+          height: 100%;
+          filter: brightness(0.8);
+        }
+      }
+      &_background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: var(--secondary);
+        z-index: 2;
+        transform: rotate(-10deg) translate(2.5rem, 2.5rem);
+      }
+      &_circle {
+        position: absolute;
+        top: 50%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        height: 90%;
+        z-index: 1;
+        filter: blur(15rem);
+        background: var(--secondary);
+        border-radius: 50%;
+      }
+    }
+  }
+}
