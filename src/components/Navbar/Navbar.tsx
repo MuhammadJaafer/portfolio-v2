@@ -66,8 +66,8 @@ type NavbarProps = {};
 
 const Navbar: React.FC<NavbarProps> = () => {
   const ContainerRef = useRef<HTMLDivElement>(null);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [mobile, setMobile] = useState(window.innerWidth <= 800 ? true : false);
+  const [windowWidth, setWindowWidth] = useState(0);
+  const [mobile, setMobile] = useState(false);
   const [toggleNavbar, setToggleNavbar] = useState(false);
   useEffect(() => {
     const handleResize = () => {

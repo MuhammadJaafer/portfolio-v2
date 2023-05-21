@@ -10,7 +10,7 @@ const Cursor: React.FC<CursorProps> = () => {
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
   const cursorRef = useRef<HTMLDivElement>(null);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState<number | null>(null);
 
   useEffect(() => {
     //inner circle get bigger while mouse down
@@ -46,7 +46,7 @@ const Cursor: React.FC<CursorProps> = () => {
       setWindowWidth(window.innerWidth);
     };
     window.addEventListener("resize", handleResize);
-    if (windowWidth <= 800) {
+    if (windowWidth! <= 800) {
       setShow(false);
     } else {
       setShow(true);
