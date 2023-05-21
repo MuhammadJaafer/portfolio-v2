@@ -1,15 +1,16 @@
 "use client";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import styles from "../../styles/Layout/MainLayout.module.scss";
 type CursorProps = {};
 
 const Cursor: React.FC<CursorProps> = () => {
   const [isClicked, setIsClicked] = useState(false);
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
   const cursorRef = useRef<HTMLDivElement>(null);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     //inner circle get bigger while mouse down
@@ -22,7 +23,6 @@ const Cursor: React.FC<CursorProps> = () => {
     };
     //hide the cursor when the mouse out of the screen
     const handleMouseEnter = () => {
-      console.log("mouse enter");
       setShow(true);
     };
     const handleMouseLeave = () => {
@@ -32,6 +32,7 @@ const Cursor: React.FC<CursorProps> = () => {
     window.addEventListener("mouseup", handleMouseUp);
     document.addEventListener("mouseenter", handleMouseEnter);
     document.addEventListener("mouseleave", handleMouseLeave);
+
     // custom cursor movement
     const handleMouseMove = (event: MouseEvent) => {
       if (!cursorRef.current) return;
@@ -40,15 +41,25 @@ const Cursor: React.FC<CursorProps> = () => {
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-
+    //hide on mobile
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    if (windowWidth <= 800) {
+      setShow(false);
+    } else {
+      setShow(true);
+    }
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mouseup", handleMouseUp);
       document.removeEventListener("mouseenter", handleMouseEnter);
       document.removeEventListener("mouseleave", handleMouseLeave);
+      window.removeEventListener("resize", handleResize);
     };
-  }, [cursorX, cursorY]);
+  }, [cursorX, cursorY, windowWidth]);
 
   return (
     <motion.div

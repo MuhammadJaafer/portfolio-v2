@@ -1,6 +1,6 @@
 import Cursor from "@/components/Layout/Cursor";
 import Links from "@/components/Layout/Links";
-import Navbar from "@/components/Navbar/Desktop/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
 import Providers from "@/providers/Providers";
 import { Quicksand } from "next/font/google";
 import "../styles/GlobalStyles.scss";
@@ -22,9 +22,9 @@ export default function RootLayout({
         <main className={styles.layout}>
           <Providers>
             <Navbar />
-            <Cursor />
             <Links />
             {children}
+            <Cursor />
           </Providers>
         </main>
       </body>

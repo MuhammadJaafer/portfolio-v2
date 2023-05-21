@@ -2,10 +2,9 @@
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useRecoilState } from "recoil";
-import styles from "../../../styles/components/Navbar.module.scss";
-import Logo from "./Logo";
+import styles from "../../styles/components/Navbar.module.scss";
 import Right from "./Right";
 const animationDuration = 1.5;
 const circleVariants = {
@@ -67,6 +66,23 @@ type NavbarProps = {};
 
 const Navbar: React.FC<NavbarProps> = () => {
   const ContainerRef = useRef<HTMLDivElement>(null);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [mobile, setMobile] = useState(window.innerWidth <= 800 ? true : false);
+  const [toggleNavbar, setToggleNavbar] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+      if (window.innerWidth <= 800) {
+        setMobile(true);
+      } else {
+        setMobile(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [mobile]);
   return (
     <>
       <nav className={`${styles.navbar}`}>
@@ -103,8 +119,21 @@ const Navbar: React.FC<NavbarProps> = () => {
           <div className={`${styles.navbar_left}`}>
             <h1 className={`${styles.navbar_left_logo}`}>Muhammad Jaafar</h1>
           </div>
-          <div className={`${styles.navbar_right}`}>
-            <Right />
+          <div
+            className={`${styles.navbar_right} ${
+              toggleNavbar ? styles.navbar_right_active : ""
+            }`}
+          >
+            <Right toggle={toggleNavbar} mobile={mobile} />
+          </div>
+          <div
+            onClick={() => {
+              setToggleNavbar((prev) => !prev);
+            }}
+            className={`${styles.navbar_toggle}`}
+          >
+            <div className={`${styles.navbar_toggle_up}`}></div>
+            <div className={`${styles.navbar_toggle_down}`}></div>
           </div>
         </motion.div>
       </nav>

@@ -2,7 +2,7 @@
 import { Icon } from "@iconify/react";
 import { useTheme } from "next-themes";
 import React, { useEffect } from "react";
-import styles from "../../../styles/components/Navbar.module.scss";
+import styles from "../../styles/components/Navbar.module.scss";
 type ThemeTogglerProps = {};
 
 const ThemeToggler: React.FC<ThemeTogglerProps> = () => {
