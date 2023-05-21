@@ -35,6 +35,7 @@ const Cursor: React.FC<CursorProps> = () => {
 
     // custom cursor movement
     const handleMouseMove = (event: MouseEvent) => {
+      setShow(true);
       if (!cursorRef.current) return;
       cursorX.set(event.clientX - cursorRef.current.clientWidth / 2);
       cursorY.set(event.clientY - cursorRef.current.clientHeight / 2);
