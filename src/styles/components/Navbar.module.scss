@@ -231,18 +231,18 @@
   }
   &_toggle {
     width: 5rem;
-    height: 2.5rem;
+    height: 5rem;
     position: relative;
     cursor: pointer;
-    transition: all 0.3s;
 
     &_up {
       width: 100%;
       height: 2px;
       background: var(--tertiary);
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       transition: all 0.3s;
     }
     &_down {
@@ -250,15 +250,15 @@
       height: 1px;
       background: var(--tertiary);
       position: absolute;
-      bottom: 0;
+      top: 75%;
       left: 0;
+      transform: translate(0%, -50%);
       transition: all 0.3s;
     }
     @media screen and (min-width: 800px) {
       display: none;
     }
     &_active {
-      height: 5rem;
       &_up {
         width: 100%;
         top: 50%;
