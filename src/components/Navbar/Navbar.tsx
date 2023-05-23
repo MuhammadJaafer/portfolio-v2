@@ -136,10 +136,20 @@ const Navbar: React.FC<NavbarProps> = () => {
             onClick={() => {
               setToggleNavbar((prev) => !prev);
             }}
-            className={`${styles.navbar_toggle}`}
+            className={`${styles.navbar_toggle} ${
+              toggleNavbar ? styles.navbar_toggle_active : ""
+            }`}
           >
-            <div className={`${styles.navbar_toggle_up}`}></div>
-            <div className={`${styles.navbar_toggle_down}`}></div>
+            <div
+              className={`${styles.navbar_toggle_up} ${
+                toggleNavbar ? styles.navbar_toggle_active_up : ""
+              }`}
+            ></div>
+            <div
+              className={`${styles.navbar_toggle_down} ${
+                toggleNavbar ? styles.navbar_toggle_active_down : ""
+              }`}
+            ></div>
           </div>
         </motion.div>
       </nav>

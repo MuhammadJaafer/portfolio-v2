@@ -52,6 +52,7 @@
       &_item {
         position: relative;
         font-size: 1.9rem;
+        font-weight: var(--light);
         cursor: pointer;
 
         &::after {
@@ -233,6 +234,8 @@
     height: 2.5rem;
     position: relative;
     cursor: pointer;
+    transition: all 0.3s;
+
     &_up {
       width: 100%;
       height: 2px;
@@ -240,6 +243,7 @@
       position: absolute;
       top: 0;
       left: 0;
+      transition: all 0.3s;
     }
     &_down {
       width: 50%;
@@ -248,9 +252,28 @@
       position: absolute;
       bottom: 0;
       left: 0;
+      transition: all 0.3s;
     }
     @media screen and (min-width: 800px) {
       display: none;
+    }
+    &_active {
+      height: 5rem;
+      &_up {
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        border-radius: 1rem;
+      }
+      &_down {
+        width: 100%;
+        height: 2px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        border-radius: 1rem;
+      }
     }
   }
 }
