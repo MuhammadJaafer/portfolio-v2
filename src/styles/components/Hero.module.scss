@@ -111,6 +111,14 @@
       filter: blur(10rem);
       background: var(--primary-light);
       border-radius: 50%;
+      @media screen and (max-width: 800px) {
+        top: 60%;
+        left: -10%;
+        width: 70%;
+        height: 70%;
+        z-index: 1;
+        filter: blur(9rem);
+      }
     }
   }
   &_right {
@@ -141,7 +149,7 @@
           //   filter: brightness(0.8);
         }
         @media screen and (max-width: 800px) {
-          height: 30rem;
+          height: 35rem;
         }
       }
       &_background {
@@ -163,6 +171,12 @@
         filter: blur(15rem);
         background: var(--secondary);
         border-radius: 50%;
+        @media screen and (max-width: 800px) {
+          width: 70%;
+          height: 70%;
+          z-index: 1;
+          filter: blur(12rem);
+        }
       }
     }
   }
