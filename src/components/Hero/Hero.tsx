@@ -236,8 +236,6 @@ const Hero: React.FC<HeroProps> = () => {
               className={`${styles.hero_right_container_imgContainer_image}`}
               src={heroData.img}
               alt={"Muhammad's image"}
-              width={300}
-              height={500}
             />
           </motion.div>
           <motion.div
