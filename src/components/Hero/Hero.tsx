@@ -1,9 +1,12 @@
 "use client";
+import { soundState } from "@/atoms/SoundAtom";
 import { heroData } from "@/db/main";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
+import { useRecoilValue } from "recoil";
+import useSound from "use-sound";
 import styles from "../../styles/components/Hero.module.scss";
 import UI from "../../styles/components/UI.module.scss";
 type HeroProps = {};
@@ -150,6 +153,8 @@ const scrollVariants = {
   },
 };
 const Hero: React.FC<HeroProps> = () => {
+  const { SoundActive } = useRecoilValue(soundState);
+  const [playClick] = useSound("/sounds/box-click.wav", { volume: 0.5 });
   return (
     <div className={`${styles.hero}`}>
       <div className={`${styles.hero_left}`}>
@@ -200,6 +205,11 @@ const Hero: React.FC<HeroProps> = () => {
               transform: "translate(-0.7rem, -0.7rem)",
             }}
             className={`${styles.hero_left_container_btn}`}
+            onClick={() => {
+              if (SoundActive) {
+                playClick();
+              }
+            }}
           >
             {heroData.btnText}
           </motion.a>
@@ -249,6 +259,11 @@ const Hero: React.FC<HeroProps> = () => {
         initial="hidden"
         animate="visible"
         className={`${styles.hero_scroll}`}
+        onClick={() => {
+          if (SoundActive) {
+            playClick();
+          }
+        }}
       >
         <Icon
           className={`${styles.hero_scroll_mouse}`}
