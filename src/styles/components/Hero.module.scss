@@ -31,11 +31,14 @@
       width: 120%;
       height: auto;
       color: var(--secondary);
+      transition: all 0.2s;
     }
     &_arrow {
       margin-top: -0.5rem;
       width: 100%;
       height: 100%;
+      transition: all 0.2s;
+
       &_svg {
         width: 100%;
         height: 100%;
@@ -44,6 +47,10 @@
     }
     @media screen and (max-width: 800px) {
       display: none;
+    }
+    &_mouse:hover,
+    &_arrow:hover {
+      filter: drop-shadow(0px 0px 7px var(--secondary));
     }
   }
   &_left {
@@ -66,12 +73,16 @@
           align-items: center;
           justify-content: center;
           gap: 1rem;
+          word-wrap: none;
           &_circle {
             width: 1.5rem;
             height: 1.5rem;
             background: var(--secondary);
             border-radius: 50%;
           }
+        }
+        @media screen and (max-width: 800px) {
+          font-size: 2.2rem;
         }
       }
       &_btn {
@@ -128,6 +139,9 @@
           width: 100%;
           height: 100%;
           //   filter: brightness(0.8);
+        }
+        @media screen and (max-width: 800px) {
+          height: 30rem;
         }
       }
       &_background {

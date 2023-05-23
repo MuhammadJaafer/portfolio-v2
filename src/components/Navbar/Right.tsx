@@ -10,7 +10,6 @@ type RightProps = {
 };
 
 const Right: React.FC<RightProps> = ({ mobile, toggle }) => {
-  console.log(mobile, toggle);
   useEffect(() => {
     if (toggle) {
       document.body.style.overflowY = "hidden";

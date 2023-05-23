@@ -85,3 +85,6 @@ ul,
 ol {
   list-style: none;
 }
+li {
+  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+}

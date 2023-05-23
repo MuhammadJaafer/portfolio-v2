@@ -70,6 +70,12 @@ const Navbar: React.FC<NavbarProps> = () => {
   const [mobile, setMobile] = useState(false);
   const [toggleNavbar, setToggleNavbar] = useState(false);
   useEffect(() => {
+    //initial check
+    if (window.innerWidth <= 800) {
+      setMobile(true);
+    } else {
+      setMobile(false);
+    }
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
       if (window.innerWidth <= 800) {
