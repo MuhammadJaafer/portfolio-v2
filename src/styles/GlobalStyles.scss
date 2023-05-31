@@ -40,6 +40,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
   @media screen and (min-width: 800px) {
     cursor: none !important;
   }
@@ -84,7 +85,4 @@ a {
 ul,
 ol {
   list-style: none;
-}
-li {
-  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
 }

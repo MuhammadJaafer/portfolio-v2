@@ -5,6 +5,7 @@ import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
+import { Link } from "react-scroll";
 import { useRecoilValue } from "recoil";
 import useSound from "use-sound";
 import styles from "../../styles/components/Hero.module.scss";
@@ -265,21 +266,23 @@ const Hero: React.FC<HeroProps> = () => {
           }
         }}
       >
-        <Icon
-          className={`${styles.hero_scroll_mouse}`}
-          icon={"iconamoon:mouse-thin"}
-        />
-        <motion.div
-          variants={arrowVariants}
-          initial="start"
-          animate="end"
-          className={`${styles.hero_scroll_arrow}`}
-        >
+        <Link to="about" smooth={true} duration={600} offset={400}>
           <Icon
-            className={`${styles.hero_scroll_arrow_svg}`}
-            icon={"ph:caret-double-down-thin"}
+            className={`${styles.hero_scroll_mouse}`}
+            icon={"iconamoon:mouse-thin"}
           />
-        </motion.div>
+          <motion.div
+            variants={arrowVariants}
+            initial="start"
+            animate="end"
+            className={`${styles.hero_scroll_arrow}`}
+          >
+            <Icon
+              className={`${styles.hero_scroll_arrow_svg}`}
+              icon={"ph:caret-double-down-thin"}
+            />
+          </motion.div>
+        </Link>
       </motion.div>
     </div>
   );

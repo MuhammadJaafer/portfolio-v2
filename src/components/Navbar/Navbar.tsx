@@ -1,4 +1,5 @@
 "use client";
+import { navState } from "@/atoms/NavAtom";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import Image from "next/image";
@@ -68,7 +69,8 @@ const Navbar: React.FC<NavbarProps> = () => {
   const ContainerRef = useRef<HTMLDivElement>(null);
   const [windowWidth, setWindowWidth] = useState(0);
   const [mobile, setMobile] = useState(false);
-  const [toggleNavbar, setToggleNavbar] = useState(false);
+  // const [toggleNavbar, setToggleNavbar] = useState(false);
+  const [navStateValue, setNavState] = useRecoilState(navState);
   useEffect(() => {
     //initial check
     if (window.innerWidth <= 800) {
@@ -127,27 +129,27 @@ const Navbar: React.FC<NavbarProps> = () => {
           </div>
           <div
             className={`${styles.navbar_right} ${
-              toggleNavbar ? styles.navbar_right_active : ""
+              navStateValue.open ? styles.navbar_right_active : ""
             }`}
           >
-            <Right toggle={toggleNavbar} mobile={mobile} />
+            <Right mobile={mobile} />
           </div>
           <div
             onClick={() => {
-              setToggleNavbar((prev) => !prev);
+              setNavState((prev) => ({ ...prev, open: !prev.open }));
             }}
             className={`${styles.navbar_toggle} ${
-              toggleNavbar ? styles.navbar_toggle_active : ""
+              navStateValue.open ? styles.navbar_toggle_active : ""
             }`}
           >
             <div
               className={`${styles.navbar_toggle_up} ${
-                toggleNavbar ? styles.navbar_toggle_active_up : ""
+                navStateValue.open ? styles.navbar_toggle_active_up : ""
               }`}
             ></div>
             <div
               className={`${styles.navbar_toggle_down} ${
-                toggleNavbar ? styles.navbar_toggle_active_down : ""
+                navStateValue.open ? styles.navbar_toggle_active_down : ""
               }`}
             ></div>
           </div>
