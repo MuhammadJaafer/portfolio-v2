@@ -4,7 +4,7 @@ type SkillsProps = {};
 
 const Skills: React.FC<SkillsProps> = () => {
   return (
-    <div className={`${styles.skills}`}>
+    <div className={`${styles.skills}`} id="skills">
       <h2 className={`${styles.skills_title}`}>Skills</h2>
       <div className={`${styles.skills_container}`}></div>
     </div>
