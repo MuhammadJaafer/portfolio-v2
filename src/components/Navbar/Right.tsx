@@ -148,19 +148,25 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
           <div className={`${styles.navbar_right_links_container}`}>
             <a
               className={`${styles.navbar_right_links_container_link}`}
-              href=""
+              href="https://github.com/MuhammadJaafer"
+              target="_blank"
+              aria-label="github"
             >
               <Icon icon={"mdi:github"} />
             </a>
             <a
               className={`${styles.navbar_right_links_container_link}`}
-              href=""
+              href="https://www.linkedin.com/in/muhammad-jaafar-a099801a9/"
+              target="_blank"
+              aria-label="linkedin"
             >
               <Icon icon={"mdi:linkedin"} />
             </a>
             <a
               className={`${styles.navbar_right_links_container_link}`}
-              href=""
+              href="mailto:muhammadaldawahreh@gmail.com"
+              target="_blank"
+              aria-label="email"
             >
               <Icon icon={"mi:email"} />
             </a>
