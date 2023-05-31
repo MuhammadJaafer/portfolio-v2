@@ -1,4 +1,6 @@
+"use client";
 import { Icon } from "@iconify/react";
+import { Variants, motion } from "framer-motion";
 import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import styles from "../../styles/components/Navbar.module.scss";
@@ -8,27 +10,85 @@ type RightProps = {
   mobile: boolean;
   toggle: boolean;
 };
+const listVariants: Variants = {
+  animate: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
 
+const itemVariants: Variants = {
+  initial: {
+    opacity: 0,
+    x: "-100%",
+  },
+  animate: {
+    opacity: 1,
+    x: "0%",
+    transition: {
+      type: "spring",
+      stiffness: 120,
+      damping: 20,
+    },
+  },
+};
 const Right: React.FC<RightProps> = ({ mobile, toggle }) => {
+  //stop scrolling
   useEffect(() => {
     if (toggle) {
+      window.scrollTo(0, 0);
       document.body.style.overflowY = "hidden";
+      document.documentElement.style.overflowY = "hidden";
     } else {
       document.body.style.overflowY = "visible";
+      document.documentElement.style.overflowY = "visible";
     }
   }, [toggle]);
   return (
     <>
-      <ul className={`${styles.navbar_right_list}`}>
-        <li className={`${styles.navbar_right_list_item}`}>About</li>
-        <li className={`${styles.navbar_right_list_item}`}>Skills</li>
-        <li className={`${styles.navbar_right_list_item}`}>Projects</li>
-        <li className={`${styles.navbar_right_list_item}`}>Contact</li>
-        <li className={`${styles.navbar_right_list_item}`}>Resume</li>
-        <li className={`${styles.navbar_right_list_item}`}>
+      <motion.ul
+        variants={listVariants}
+        animate={toggle ? "animate" : "initial"}
+        className={`${styles.navbar_right_list}`}
+      >
+        <motion.li
+          variants={itemVariants}
+          className={`${styles.navbar_right_list_item}`}
+        >
+          About
+        </motion.li>
+        <motion.li
+          variants={itemVariants}
+          className={`${styles.navbar_right_list_item}`}
+        >
+          Skills
+        </motion.li>
+        <motion.li
+          variants={itemVariants}
+          className={`${styles.navbar_right_list_item}`}
+        >
+          Projects
+        </motion.li>
+        <motion.li
+          variants={itemVariants}
+          className={`${styles.navbar_right_list_item}`}
+        >
+          Contact
+        </motion.li>
+        <motion.li
+          variants={itemVariants}
+          className={`${styles.navbar_right_list_item}`}
+        >
+          Resume
+        </motion.li>
+        <motion.li
+          variants={itemVariants}
+          className={`${styles.navbar_right_list_item}`}
+        >
           <ThemeToggler />
-        </li>
-      </ul>
+        </motion.li>
+      </motion.ul>
       {mobile && (
         <div className={`${styles.navbar_right_links}`}>
           <div className={`${styles.navbar_right_links_line}`}></div>
