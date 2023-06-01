@@ -50,6 +50,7 @@ const About: React.FC<AboutProps> = () => {
           </motion.div>
         ))}
       </motion.div>
+      <div className={`${styles.about_circle1}`}></div>
     </div>
   );
 };

@@ -27,3 +27,50 @@ export const aboutData = {
     },
   ],
 };
+
+export const SkillsData = {
+  title: "Skills",
+  categories: [
+    {
+      title: "Front End",
+      skills: [
+        "HTML",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Next",
+        "Redux",
+        "Astro",
+        "Recoil",
+        "GraphQL",
+        "Apollo",
+        "Firebase",
+      ],
+    },
+    {
+      title: "Styling & Design",
+      skills: [
+        "CSS",
+        "SASS",
+        "BootStrap",
+        "Tailwind CSS",
+        "CSS Module",
+        "Figma",
+        "Styled-Components",
+      ],
+    },
+    {
+      title: "Miscellaneous",
+      skills: [
+        "Git",
+        "Jest",
+        "Cypress",
+        "Playwright",
+        "react-testing-library",
+        "Webpack",
+        "UI/UX design processes",
+        "REST APIs",
+      ],
+    },
+  ],
+};

@@ -10,6 +10,8 @@
   --medium: 400;
   --bold: 500;
   --bolder: 600;
+  --card-bg: #111821;
+  --card-text: #e31b6d;
 }
 .light {
   --primary: #ffffff;
@@ -22,6 +24,8 @@
   --medium: 500;
   --bold: 600;
   --bolder: 700;
+  --card-bg: #e31b6d;
+  --card-text: #111821;
 }
 .dark {
   /* Your default theme */
@@ -35,6 +39,8 @@
   --medium: 400;
   --bold: 500;
   --bolder: 600;
+  --card-bg: #223247;
+  --card-text: #e31b6d;
 }
 * {
   box-sizing: border-box;
