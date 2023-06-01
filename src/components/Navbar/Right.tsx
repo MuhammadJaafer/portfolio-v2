@@ -111,7 +111,7 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
             onClick={() => {
               setNavState((prev) => ({ ...prev, open: false }));
             }}
-            to="link"
+            to="contact"
             smooth={true}
             duration={600}
             offset={50}
