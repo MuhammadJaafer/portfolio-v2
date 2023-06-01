@@ -51,11 +51,7 @@
     cursor: none !important;
   }
 }
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+
 html {
   user-select: none;
   font-size: 62.5%; // 1rem = 10px
@@ -77,8 +73,9 @@ body {
   background: var(--primary);
   transition: all 0.3s;
   height: 100%;
-  overflow: visible;
+  width: 100%;
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 input,
