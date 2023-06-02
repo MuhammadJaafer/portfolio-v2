@@ -1,10 +1,12 @@
 "use client";
 import { navState } from "@/atoms/NavAtom";
+import { soundState } from "@/atoms/SoundAtom";
 import { Icon } from "@iconify/react";
 import { Variants, motion } from "framer-motion";
 import React, { useEffect } from "react";
 import { Link } from "react-scroll";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
+import useSound from "use-sound";
 import styles from "../../styles/components/Navbar.module.scss";
 import ThemeToggler from "./ThemeToggler";
 
@@ -35,6 +37,8 @@ const itemVariants: Variants = {
   },
 };
 const Right: React.FC<RightProps> = ({ mobile }) => {
+  const { SoundActive } = useRecoilValue(soundState);
+  const [playClick] = useSound("/sounds/box-click.wav", { volume: 0.5 });
   const [navStateValue, setNavState] = useRecoilState(navState);
 
   //stop scrolling
@@ -61,6 +65,9 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
         >
           <Link
             onClick={() => {
+              if (SoundActive) {
+                playClick();
+              }
               setNavState((prev) => ({ ...prev, open: false }));
             }}
             to="about"
@@ -77,6 +84,9 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
         >
           <Link
             onClick={() => {
+              if (SoundActive) {
+                playClick();
+              }
               setNavState((prev) => ({ ...prev, open: false }));
             }}
             to="skills"
@@ -93,6 +103,9 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
         >
           <Link
             onClick={() => {
+              if (SoundActive) {
+                playClick();
+              }
               setNavState((prev) => ({ ...prev, open: false }));
             }}
             to="projects"
@@ -109,6 +122,9 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
         >
           <Link
             onClick={() => {
+              if (SoundActive) {
+                playClick();
+              }
               setNavState((prev) => ({ ...prev, open: false }));
             }}
             to="contact"
@@ -125,6 +141,9 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
         >
           <Link
             onClick={() => {
+              if (SoundActive) {
+                playClick();
+              }
               setNavState((prev) => ({ ...prev, open: false }));
             }}
             to="link"
@@ -151,6 +170,11 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
               href="https://github.com/MuhammadJaafer"
               target="_blank"
               aria-label="github"
+              onClick={() => {
+                if (SoundActive) {
+                  playClick();
+                }
+              }}
             >
               <Icon icon={"mdi:github"} />
             </a>
@@ -159,6 +183,11 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
               href="https://www.linkedin.com/in/muhammad-jaafar-a099801a9/"
               target="_blank"
               aria-label="linkedin"
+              onClick={() => {
+                if (SoundActive) {
+                  playClick();
+                }
+              }}
             >
               <Icon icon={"mdi:linkedin"} />
             </a>
@@ -167,6 +196,11 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
               href="mailto:muhammadaldawahreh@gmail.com"
               target="_blank"
               aria-label="email"
+              onClick={() => {
+                if (SoundActive) {
+                  playClick();
+                }
+              }}
             >
               <Icon icon={"mi:email"} />
             </a>

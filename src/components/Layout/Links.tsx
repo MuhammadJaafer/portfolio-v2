@@ -1,8 +1,11 @@
 "use client";
+import { soundState } from "@/atoms/SoundAtom";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import { type } from "os";
 import React from "react";
+import { useRecoilValue } from "recoil";
+import useSound from "use-sound";
 import styles from "../../styles/Layout/MainLayout.module.scss";
 type LinksProps = {};
 const containerVariants = {
@@ -48,6 +51,8 @@ const lineVariants = {
   },
 };
 const Links: React.FC<LinksProps> = () => {
+  const { SoundActive } = useRecoilValue(soundState);
+  const [playClick] = useSound("/sounds/box-click.wav", { volume: 0.5 });
   return (
     <motion.div
       variants={containerVariants}
@@ -61,6 +66,11 @@ const Links: React.FC<LinksProps> = () => {
         href="mailto:muhammadaldawahreh@gmail.com"
         target="_blank"
         aria-label="email"
+        onClick={() => {
+          if (SoundActive) {
+            playClick();
+          }
+        }}
       >
         <Icon className={`${styles.links_link_icon}`} icon={"mi:email"} />
       </motion.a>
@@ -70,6 +80,11 @@ const Links: React.FC<LinksProps> = () => {
         href="https://www.linkedin.com/in/muhammad-jaafar-a099801a9/"
         target="_blank"
         aria-label="linkedin"
+        onClick={() => {
+          if (SoundActive) {
+            playClick();
+          }
+        }}
       >
         <Icon className={`${styles.links_link_icon}`} icon={"mdi:linkedin"} />
       </motion.a>
@@ -79,6 +94,11 @@ const Links: React.FC<LinksProps> = () => {
         href="https://github.com/MuhammadJaafer"
         target="_blank"
         aria-label="github"
+        onClick={() => {
+          if (SoundActive) {
+            playClick();
+          }
+        }}
       >
         <Icon className={`${styles.links_link_icon}`} icon={"mdi:github"} />
       </motion.a>

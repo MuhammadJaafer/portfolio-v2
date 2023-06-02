@@ -1,10 +1,12 @@
 "use client";
 import { navState } from "@/atoms/NavAtom";
+import { soundState } from "@/atoms/SoundAtom";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
+import useSound from "use-sound";
 import styles from "../../styles/components/Navbar.module.scss";
 import Right from "./Right";
 const animationDuration = 1.5;
@@ -66,6 +68,8 @@ const clipVariants = {
 type NavbarProps = {};
 
 const Navbar: React.FC<NavbarProps> = () => {
+  const { SoundActive } = useRecoilValue(soundState);
+  const [playClick] = useSound("/sounds/box-click.wav", { volume: 0.5 });
   const ContainerRef = useRef<HTMLDivElement>(null);
   const [windowWidth, setWindowWidth] = useState(0);
   const [mobile, setMobile] = useState(false);
@@ -136,6 +140,9 @@ const Navbar: React.FC<NavbarProps> = () => {
           </div>
           <div
             onClick={() => {
+              if (SoundActive) {
+                playClick();
+              }
               setNavState((prev) => ({ ...prev, open: !prev.open }));
             }}
             className={`${styles.navbar_toggle} ${
