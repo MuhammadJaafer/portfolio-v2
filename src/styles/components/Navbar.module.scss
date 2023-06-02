@@ -26,7 +26,7 @@
         border-radius: 50%;
         background: var(--secondary);
         filter: blur(0.5rem);
-        // transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
       }
       &:hover::after {
         height: 25%;
@@ -67,7 +67,7 @@
           border-radius: 50%;
           background: var(--secondary);
           filter: blur(0.5rem);
-          // transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
         }
         &:hover::after {
           height: 30%;
@@ -86,7 +86,7 @@
               height: 100%;
               color: var(--tertiary);
 
-              // transition: all 0.2s;
+              transition: all 0.2s;
               &:hover {
                 filter: drop-shadow(0px 0px 5px var(--tertiary));
               }
@@ -101,7 +101,7 @@
               height: 100%;
               color: var(--tertiary);
 
-              // transition: all 0.2s;
+              transition: all 0.2s;
               &:hover {
                 filter: drop-shadow(0px 0px 5px var(--tertiary));
               }
@@ -209,7 +209,7 @@
                 height: 100%;
                 color: var(--tertiary);
 
-                // transition: all 0.2s;
+                transition: all 0.2s;
                 &:hover {
                   filter: drop-shadow(0px 0px 5px var(--tertiary));
                 }
@@ -224,7 +224,7 @@
                 height: 100%;
                 color: var(--tertiary);
 
-                // transition: all 0.2s;
+                transition: all 0.2s;
                 &:hover {
                   filter: drop-shadow(0px 0px 5px var(--tertiary));
                 }
@@ -249,7 +249,7 @@
       top: 25%;
       left: 50%;
       transform: translate(-50%, -50%);
-      // transition: all 0.3s;
+      transition: all 0.3s;
     }
     &_down {
       width: 50%;
@@ -259,7 +259,7 @@
       top: 75%;
       left: 0;
       transform: translate(0%, -50%);
-      // transition: all 0.3s;
+      transition: all 0.3s;
     }
     @media screen and (min-width: 800px) {
       display: none;
