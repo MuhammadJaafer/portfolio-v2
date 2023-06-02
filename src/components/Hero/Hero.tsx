@@ -157,7 +157,7 @@ const Hero: React.FC<HeroProps> = () => {
   const { SoundActive } = useRecoilValue(soundState);
   const [playClick] = useSound("/sounds/box-click.wav", { volume: 0.5 });
   return (
-    <div className={`${styles.hero}`}>
+    <div className={`${styles.hero}`} id="hero">
       <div className={`${styles.hero_left}`}>
         <motion.div
           variants={mainContainerVariants}

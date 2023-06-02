@@ -26,6 +26,22 @@ const childrenVariants: Variants = {
     },
   },
 };
+const linkVariants: Variants = {
+  initial: {
+    opacity: 0,
+    x: "-50%",
+    color: "var(--tertiary)",
+  },
+  animate: {
+    opacity: 1,
+    x: "0%",
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 20,
+    },
+  },
+};
 const Contact: React.FC<ContactProps> = () => {
   return (
     <motion.div
@@ -59,7 +75,7 @@ const Contact: React.FC<ContactProps> = () => {
             className={`${styles.contact_links_link}`}
             href={link.url}
             key={i}
-            variants={childrenVariants}
+            variants={linkVariants}
             whileHover={{ color: "var(--secondary)" }}
           >
             {link.label}
