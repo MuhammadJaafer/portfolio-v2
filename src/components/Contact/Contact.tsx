@@ -1,5 +1,5 @@
 "use client";
-import { aboutData, contactData } from "@/db/main";
+import { contactData } from "@/db/main";
 import { Variants, motion } from "framer-motion";
 import React from "react";
 import styles from "../../styles/components/Contact.module.scss";

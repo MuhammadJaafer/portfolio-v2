@@ -2,7 +2,7 @@
 import { soundState } from "@/atoms/SoundAtom";
 import { Icon } from "@iconify/react";
 import { useTheme } from "next-themes";
-import React, { useEffect } from "react";
+import React from "react";
 import { useRecoilState } from "recoil";
 import useSound from "use-sound";
 

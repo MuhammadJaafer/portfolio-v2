@@ -2,7 +2,6 @@
 import { soundState } from "@/atoms/SoundAtom";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
-import { type } from "os";
 import React from "react";
 import { useRecoilValue } from "recoil";
 import useSound from "use-sound";
