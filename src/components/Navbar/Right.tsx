@@ -74,6 +74,7 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
             smooth={true}
             duration={600}
             offset={50}
+            aria-label="about"
           >
             About
           </Link>
@@ -93,6 +94,7 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
             smooth={true}
             duration={600}
             offset={50}
+            aria-label="skills"
           >
             Skills
           </Link>
@@ -112,6 +114,7 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
             smooth={true}
             duration={600}
             offset={50}
+            aria-label="projects"
           >
             Projects
           </Link>
@@ -131,6 +134,7 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
             smooth={true}
             duration={600}
             offset={50}
+            aria-label="contact"
           >
             Contact
           </Link>
@@ -150,6 +154,7 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
             smooth={true}
             duration={600}
             offset={50}
+            aria-label="resume"
           >
             Resume
           </Link>
