@@ -115,14 +115,17 @@
       width: 60%;
       max-width: none;
       &_active {
-        display: block;
+        display: flex;
+        flex-direction: column;
         position: fixed;
         top: 0rem;
-        left: 0;
+        left: 0rem;
         width: 100%;
         height: 100svh;
         background: var(--primary);
-        padding: 15rem 0;
+        padding-top: 10rem;
+        padding-bottom: 3rem;
+        gap: 2rem;
       }
       &_links {
         width: 100%;
@@ -130,7 +133,7 @@
         justify-content: space-between;
         align-items: center;
         gap: 3rem;
-        margin-top: 5rem;
+        margin-top: auto;
         &_container {
           display: flex;
           align-items: center;
@@ -156,8 +159,9 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 60%;
+        width: 55%;
         height: 100%;
+        max-height: 85rem;
         &_item {
           position: relative;
           font-size: 3rem;
@@ -201,8 +205,8 @@
             display: flex;
             gap: 2rem;
             &_theme {
-              width: 5rem;
-              height: 5rem;
+              width: 4.2rem;
+              height: 4.2rem;
               cursor: pointer;
               & svg {
                 width: 100%;
@@ -217,18 +221,39 @@
             }
             &_sound {
               cursor: pointer;
-              width: 5rem;
-              height: 5rem;
+              width: 4.2rem;
+              height: 4.2rem;
               & svg {
                 width: 100%;
                 height: 100%;
                 color: var(--tertiary);
-
                 transition: all 0.2s;
                 &:hover {
                   filter: drop-shadow(0px 0px 5px var(--tertiary));
                 }
               }
+            }
+          }
+        }
+      }
+    }
+    @media screen and (max-height: 700px) {
+      &_list {
+        &_item {
+          & a {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+          }
+          &_toggler {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            &_theme {
+              width: 4rem;
+              height: 4rem;
+            }
+            &_sound {
+              width: 4rem;
+              height: 4rem;
             }
           }
         }
@@ -240,7 +265,6 @@
     height: 5rem;
     position: relative;
     cursor: pointer;
-
     &_up {
       width: 100%;
       height: 2px;
@@ -249,7 +273,7 @@
       top: 25%;
       left: 50%;
       transform: translate(-50%, -50%);
-      transition: all 0.3s;
+      transition: all 0.2s linear;
     }
     &_down {
       width: 50%;
@@ -258,12 +282,9 @@
       position: absolute;
       top: 75%;
       left: 0;
-      transform: translate(0%, -50%);
-      transition: all 0.3s;
+      transition: all 0.2s linear;
     }
-    @media screen and (min-width: 800px) {
-      display: none;
-    }
+
     &_active {
       &_up {
         width: 100%;
@@ -280,6 +301,9 @@
         transform: translate(-50%, -50%) rotate(-45deg);
         border-radius: 1rem;
       }
+    }
+    @media screen and (min-width: 800px) {
+      display: none;
     }
   }
 }
