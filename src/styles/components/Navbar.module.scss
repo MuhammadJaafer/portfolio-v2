@@ -41,7 +41,7 @@
         }
         &_active {
           position: fixed;
-          top: 15px;
+          top: 15.5px;
         }
       }
     }
@@ -125,7 +125,7 @@
         top: 0rem;
         left: 0rem;
         width: 100%;
-        height: 100dvh;
+        height: 100vh;
         background: var(--primary);
         padding-top: 10rem;
         padding-bottom: 3rem;
@@ -138,6 +138,7 @@
         align-items: center;
         gap: 3rem;
         margin-top: auto;
+        margin-bottom: 5rem;
         &_container {
           display: flex;
           align-items: center;
