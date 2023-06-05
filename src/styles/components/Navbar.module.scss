@@ -241,30 +241,31 @@
           }
         }
       }
-    }
-    @media screen and (max-height: 700px) {
-      &_list {
-        &_item {
-          & a {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-          }
-          &_toggler {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            &_theme {
-              width: 4rem;
-              height: 4rem;
+      @media screen and (max-height: 700px) {
+        &_list {
+          &_item {
+            & a {
+              padding-top: 1rem;
+              padding-bottom: 1rem;
             }
-            &_sound {
-              width: 4rem;
-              height: 4rem;
+            &_toggler {
+              padding-top: 1rem;
+              padding-bottom: 1rem;
+              &_theme {
+                width: 4rem;
+                height: 4rem;
+              }
+              &_sound {
+                width: 4rem;
+                height: 4rem;
+              }
             }
           }
         }
       }
     }
   }
+
   &_toggle {
     width: 5rem;
     height: 5rem;
