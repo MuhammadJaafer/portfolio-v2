@@ -127,7 +127,13 @@ const Navbar: React.FC<NavbarProps> = () => {
           }}
         >
           <div className={`${styles.navbar_left}`}>
-            <h1 className={`${styles.navbar_left_logo}`}>Muhammad Jaafar</h1>
+            <h1
+              className={`${styles.navbar_left_logo} ${
+                navStateValue.open ? styles.navbar_left_logo_active : ""
+              }`}
+            >
+              Muhammad Jaafar
+            </h1>
           </div>
           <div
             className={`${styles.navbar_right} ${

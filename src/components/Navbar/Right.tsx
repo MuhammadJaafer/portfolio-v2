@@ -42,16 +42,19 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
   const [navStateValue, setNavState] = useRecoilState(navState);
 
   //stop scrolling
-  // useEffect(() => {
-  //   if (navStateValue.open && mobile) {
-  //     window.scrollTo(0, 0);
-  //     document.body.style.overflowY = "hidden";
-  //     document.documentElement.style.overflowY = "hidden";
-  //   } else {
-  //     document.body.style.overflowY = "visible";
-  //     document.documentElement.style.overflowY = "visible";
-  //   }
-  // }, [navStateValue.open, mobile]);
+  useEffect(() => {
+    const stopScroll = () => {
+      if (mobile && navStateValue.open) {
+        window.scrollTo(0, 0);
+      }
+    };
+
+    window.addEventListener("scroll", stopScroll);
+
+    return () => {
+      window.removeEventListener("scroll", stopScroll);
+    };
+  }, [navStateValue.open, mobile]);
   return (
     <>
       <motion.ul
