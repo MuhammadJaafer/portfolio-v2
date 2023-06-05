@@ -42,16 +42,16 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
   const [navStateValue, setNavState] = useRecoilState(navState);
 
   //stop scrolling
-  useEffect(() => {
-    if (navStateValue.open && mobile) {
-      window.scrollTo(0, 0);
-      document.body.style.overflowY = "hidden";
-      document.documentElement.style.overflowY = "hidden";
-    } else {
-      document.body.style.overflowY = "visible";
-      document.documentElement.style.overflowY = "visible";
-    }
-  }, [navStateValue.open, mobile]);
+  // useEffect(() => {
+  //   if (navStateValue.open && mobile) {
+  //     window.scrollTo(0, 0);
+  //     document.body.style.overflowY = "hidden";
+  //     document.documentElement.style.overflowY = "hidden";
+  //   } else {
+  //     document.body.style.overflowY = "visible";
+  //     document.documentElement.style.overflowY = "visible";
+  //   }
+  // }, [navStateValue.open, mobile]);
   return (
     <>
       <motion.ul
@@ -74,7 +74,6 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
             smooth={true}
             duration={600}
             offset={50}
-            aria-label="about"
           >
             About
           </Link>
@@ -94,7 +93,6 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
             smooth={true}
             duration={600}
             offset={50}
-            aria-label="skills"
           >
             Skills
           </Link>
@@ -114,7 +112,6 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
             smooth={true}
             duration={600}
             offset={50}
-            aria-label="projects"
           >
             Projects
           </Link>
@@ -134,7 +131,6 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
             smooth={true}
             duration={600}
             offset={50}
-            aria-label="contact"
           >
             Contact
           </Link>
@@ -154,7 +150,6 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
             smooth={true}
             duration={600}
             offset={50}
-            aria-label="resume"
           >
             Resume
           </Link>

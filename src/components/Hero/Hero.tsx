@@ -200,7 +200,6 @@ const Hero: React.FC<HeroProps> = () => {
             </motion.span>
           </div>
           <motion.a
-            aria-label="resume"
             variants={textChildrenVariants}
             whileHover={{
               boxShadow: "0.7rem 0.7rem 0px var(--secondary)",
@@ -273,7 +272,7 @@ const Hero: React.FC<HeroProps> = () => {
           smooth={true}
           duration={600}
           offset={10}
-          aria-label="hero"
+          href="#"
         >
           <Icon
             className={`${styles.hero_scroll_mouse}`}
