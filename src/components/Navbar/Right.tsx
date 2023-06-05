@@ -74,6 +74,7 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
               setNavState((prev) => ({ ...prev, open: false }));
             }}
             to="about"
+            href="about"
             smooth={true}
             duration={600}
             offset={50}
@@ -96,6 +97,7 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
             smooth={true}
             duration={600}
             offset={50}
+            href="skills"
           >
             Skills
           </Link>
@@ -112,6 +114,7 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
               setNavState((prev) => ({ ...prev, open: false }));
             }}
             to="projects"
+            href="projects"
             smooth={true}
             duration={600}
             offset={50}
@@ -131,6 +134,7 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
               setNavState((prev) => ({ ...prev, open: false }));
             }}
             to="contact"
+            href="contact"
             smooth={true}
             duration={600}
             offset={50}
@@ -150,6 +154,7 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
               setNavState((prev) => ({ ...prev, open: false }));
             }}
             to="link"
+            href="resume"
             smooth={true}
             duration={600}
             offset={50}
