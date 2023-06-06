@@ -1,5 +1,7 @@
 import myImage from "../../public/images/muhammad.png";
-
+import mutahItImg from "../../public/images/mutah-it.png";
+import randQuoteImg from "../../public/images/randquote.png";
+import redditCloneImg from "../../public/images/reddit-clone.png";
 export const heroData = {
   img: myImage,
   hi: "Hello! I am",
@@ -107,6 +109,47 @@ export const contactData = {
     {
       label: "Resume",
       url: "#",
+    },
+  ],
+};
+
+export const ProjectsData = {
+  title: "Projects",
+  Projects: [
+    {
+      name: "Mutah IT",
+      technologies: ["JavaScript", "React", "Styled-Components", "Firebase"],
+      image: mutahItImg,
+      description:
+        "A Place where you can find everything you need as an IT student at Mutah University, I have used React js + Firebase in this project and this website has custom-made analytics system.",
+
+      demoUrl: "https://mutah-it.com/",
+      codeUrl: "",
+    },
+    {
+      name: "Reddit Clone",
+      image: redditCloneImg,
+      technologies: [
+        "TypeScript",
+        "React",
+        "Next",
+        "Recoil",
+        "Styled-Components",
+        "Firebase",
+      ],
+      description:
+        "A fully functional Reddit Clone with a lot of features built with the latest technology in the web development field.",
+      demoUrl: "https://m7-reddit-clone.vercel.app/",
+      codeUrl: "https://github.com/MuhammadJaafer/reddit-clone",
+    },
+    {
+      name: "RandQuote",
+      image: randQuoteImg,
+      technologies: ["Javascript", "REST APIs", "OOP"],
+      description:
+        "RandQuote is a website to show random quotes with some features like copying the quote or saving the quote as an image and it has translation between AR and Eng and I have built all these features with vanilla javascript using OOP architecture.",
+      demoUrl: "https://randquotee.netlify.app/",
+      codeUrl: "https://github.com/MuhammadJaafer/randQuote",
     },
   ],
 };
