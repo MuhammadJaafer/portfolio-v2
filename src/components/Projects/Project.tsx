@@ -1,8 +1,11 @@
 "use client";
+import { soundState } from "@/atoms/SoundAtom";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
+import { useRecoilValue } from "recoil";
+import useSound from "use-sound";
 import styles from "../../styles/components/Projects.module.scss";
 type ProjectProps = {
   data: {
@@ -16,6 +19,8 @@ type ProjectProps = {
 };
 
 const Project: React.FC<ProjectProps> = ({ data }) => {
+  const { SoundActive } = useRecoilValue(soundState);
+  const [playClick] = useSound("/sounds/box-click.wav", { volume: 0.5 });
   return (
     <motion.div
       initial={{
@@ -29,7 +34,7 @@ const Project: React.FC<ProjectProps> = ({ data }) => {
       transition={{
         type: "spring",
         stiffness: 150,
-        damping: 10,
+        damping: 12,
       }}
       viewport={{ amount: 0.4, once: true }}
       className={`${styles.projects_container_project}`}
@@ -70,30 +75,44 @@ const Project: React.FC<ProjectProps> = ({ data }) => {
           {data.description}
         </p>
         <div className={`${styles.projects_container_project_right_buttons}`}>
-          <motion.a
-            whileHover={{
-              boxShadow: "0.5rem 0.5rem 0px var(--secondary)",
-              transform: "translate(-0.5rem, -0.5rem)",
-            }}
-            className={`${styles.projects_container_project_right_buttons_btn}`}
-            href={data.demoUrl}
-            target="_blank"
-          >
-            <Icon icon={"ph:arrow-square-out-light"} />
-            Live
-          </motion.a>
-          <motion.a
-            whileHover={{
-              boxShadow: "0.5rem 0.5rem 0px var(--secondary)",
-              transform: "translate(-0.5rem, -0.5rem)",
-            }}
-            className={`${styles.projects_container_project_right_buttons_btn}`}
-            href={data.codeUrl}
-            target="_blank"
-          >
-            <Icon icon={"mdi:github"} />
-            Code
-          </motion.a>
+          {data.demoUrl && (
+            <motion.a
+              onClick={() => {
+                if (SoundActive) {
+                  playClick();
+                }
+              }}
+              whileHover={{
+                boxShadow: "0.5rem 0.5rem 0px var(--secondary)",
+                transform: "translate(-0.5rem, -0.5rem)",
+              }}
+              className={`${styles.projects_container_project_right_buttons_btn}`}
+              href={data.demoUrl}
+              target="_blank"
+            >
+              <Icon icon={"ph:arrow-square-out-light"} />
+              Live
+            </motion.a>
+          )}
+          {data.codeUrl && (
+            <motion.a
+              onClick={() => {
+                if (SoundActive) {
+                  playClick();
+                }
+              }}
+              whileHover={{
+                boxShadow: "0.5rem 0.5rem 0px var(--secondary)",
+                transform: "translate(-0.5rem, -0.5rem)",
+              }}
+              className={`${styles.projects_container_project_right_buttons_btn}`}
+              href={data.codeUrl}
+              target="_blank"
+            >
+              <Icon icon={"mdi:github"} />
+              Code
+            </motion.a>
+          )}
         </div>
       </div>
     </motion.div>

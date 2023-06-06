@@ -1,3 +1,4 @@
+import bookieImg from "../../public/images/bookie.png";
 import myImage from "../../public/images/muhammad.png";
 import mutahItImg from "../../public/images/mutah-it.png";
 import randQuoteImg from "../../public/images/randquote.png";
@@ -117,11 +118,28 @@ export const ProjectsData = {
   title: "Projects",
   Projects: [
     {
+      name: "Bookie",
+      image: bookieImg,
+      technologies: [
+        "TypeScript",
+        "React",
+        "Next",
+        "Redux",
+        "Module SCSS",
+        "Firebase",
+        "Sanity",
+      ],
+      description:
+        "Bookie is a modern e-commerce platform designed exclusively for book lovers. It offers a diverse collection of books across various genres, creating an immersive online bookstore experience. With its sleek and contemporary design, Bookie provides a visually appealing platform for browsing and discovering captivating titles.",
+      demoUrl: "https://bookie-store.vercel.app/",
+      codeUrl: "https://github.com/MuhammadJaafer/bookie",
+    },
+    {
       name: "Mutah IT",
       technologies: ["JavaScript", "React", "Styled-Components", "Firebase"],
       image: mutahItImg,
       description:
-        "A Place where you can find everything you need as an IT student at Mutah University, I have used React js + Firebase in this project and this website has custom-made analytics system.",
+        "A one-stop destination for IT students at Mutah University, the platform provides a wealth of resources, including course explanations, study plans, and trial exams specifically designed for all IT majors at Mutah University.",
 
       demoUrl: "https://mutah-it.com/",
       codeUrl: "",
@@ -138,7 +156,7 @@ export const ProjectsData = {
         "Firebase",
       ],
       description:
-        "A fully functional Reddit Clone with a lot of features built with the latest technology in the web development field.",
+        "A fully functional Reddit clone built with the latest technology in the web development field, allowing users to create communities, as well as create, post, and upvote content, comment on and vote on other users' content.",
       demoUrl: "https://m7-reddit-clone.vercel.app/",
       codeUrl: "https://github.com/MuhammadJaafer/reddit-clone",
     },
@@ -147,7 +165,7 @@ export const ProjectsData = {
       image: randQuoteImg,
       technologies: ["Javascript", "REST APIs", "OOP"],
       description:
-        "RandQuote is a website to show random quotes with some features like copying the quote or saving the quote as an image and it has translation between AR and Eng and I have built all these features with vanilla javascript using OOP architecture.",
+        "RandQuote is a website that showcases random quotes, offering features such as copying the quote or saving it as an image. It also provides translation between Arabic and English. All of these features have been implemented using vanilla JavaScript and an object-oriented programming (OOP) architecture.",
       demoUrl: "https://randquotee.netlify.app/",
       codeUrl: "https://github.com/MuhammadJaafer/randQuote",
     },

@@ -74,6 +74,7 @@ const Contact: React.FC<ContactProps> = () => {
           <motion.a
             className={`${styles.contact_links_link}`}
             href={link.url}
+            target="_blank"
             key={i}
             variants={linkVariants}
             whileHover={{ color: "var(--secondary)" }}
