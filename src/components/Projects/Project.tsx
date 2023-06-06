@@ -1,6 +1,8 @@
 "use client";
 import { soundState } from "@/atoms/SoundAtom";
+import { analytics } from "@/firebase/config";
 import { Icon } from "@iconify/react";
+import { getAnalytics, logEvent } from "firebase/analytics";
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
@@ -20,6 +22,8 @@ type ProjectProps = {
 
 const Project: React.FC<ProjectProps> = ({ data }) => {
   const { SoundActive } = useRecoilValue(soundState);
+  const [playPop] = useSound("/sounds/pop.mp3", { volume: 0.2 });
+
   const [playClick] = useSound("/sounds/box-click.wav", { volume: 0.5 });
   return (
     <motion.div
@@ -81,6 +85,12 @@ const Project: React.FC<ProjectProps> = ({ data }) => {
                 if (SoundActive) {
                   playClick();
                 }
+                logEvent(getAnalytics(), `${data.name} Live`);
+              }}
+              onHoverStart={() => {
+                if (SoundActive) {
+                  playPop();
+                }
               }}
               whileHover={{
                 boxShadow: "0.5rem 0.5rem 0px var(--secondary)",
@@ -99,6 +109,12 @@ const Project: React.FC<ProjectProps> = ({ data }) => {
               onClick={() => {
                 if (SoundActive) {
                   playClick();
+                }
+                logEvent(getAnalytics(), `${data.name} Code`);
+              }}
+              onHoverStart={() => {
+                if (SoundActive) {
+                  playPop();
                 }
               }}
               whileHover={{
