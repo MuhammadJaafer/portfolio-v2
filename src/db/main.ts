@@ -110,7 +110,7 @@ export const contactData = {
     },
     {
       label: "Resume",
-      url: "#",
+      url: "/Docs/resume.pdf",
     },
   ],
 };

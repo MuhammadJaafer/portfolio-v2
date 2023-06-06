@@ -146,21 +146,18 @@ const Right: React.FC<RightProps> = ({ mobile }) => {
           variants={itemVariants}
           className={`${styles.navbar_right_list_item}`}
         >
-          <Link
+          <a
             onClick={() => {
               if (SoundActive) {
                 playClick();
               }
               setNavState((prev) => ({ ...prev, open: false }));
             }}
-            to="link"
-            href="resume"
-            smooth={true}
-            duration={600}
-            offset={50}
+            href={"/Docs/resume.pdf"}
+            target="_blank"
           >
             Resume
-          </Link>
+          </a>
         </motion.li>
         <motion.li
           variants={itemVariants}
