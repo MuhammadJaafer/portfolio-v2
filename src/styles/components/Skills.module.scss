@@ -48,7 +48,7 @@
   }
   &_circle1 {
     position: absolute;
-    bottom: -20%;
+    bottom: 0%;
     left: -18%;
     width: 35rem;
     height: 25rem;
@@ -59,7 +59,7 @@
   }
   &_circle2 {
     position: absolute;
-    bottom: -20%;
+    bottom: 0%;
     right: -20%;
     width: 50rem;
     height: 40rem;
@@ -71,11 +71,11 @@
   @media screen and (max-width: 800px) {
     &_circle1 {
       position: absolute;
-      bottom: -10%;
+      bottom: 0%;
       left: -40%;
     }
     &_circle2 {
-      bottom: 50%;
+      bottom: 40%;
       right: -25%;
       width: 50rem;
       height: 40rem;

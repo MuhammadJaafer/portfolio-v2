@@ -11,7 +11,7 @@ const Projects: React.FC<ProjectsProps> = () => {
       <h2 className={`${styles.projects_title}`}>{ProjectsData.title}</h2>
       <div className={`${styles.projects_container}`}>
         {ProjectsData.Projects.map((project, i) => (
-          <Project key={i} data={project} />
+          <Project key={i} index={i} data={project} />
         ))}
       </div>
     </div>

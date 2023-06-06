@@ -18,9 +18,10 @@ type ProjectProps = {
     demoUrl: string;
     codeUrl: string;
   };
+  index: number;
 };
 
-const Project: React.FC<ProjectProps> = ({ data }) => {
+const Project: React.FC<ProjectProps> = ({ data, index }) => {
   const { SoundActive } = useRecoilValue(soundState);
   const [playPop] = useSound("/sounds/pop.mp3", { volume: 0.2 });
 
@@ -131,6 +132,13 @@ const Project: React.FC<ProjectProps> = ({ data }) => {
           )}
         </div>
       </div>
+      <div
+        className={`${styles.projects_container_project_circle} ${
+          index % 2 === 0
+            ? styles.projects_container_project_circle_down
+            : styles.projects_container_project_circle_up
+        }`}
+      ></div>
     </motion.div>
   );
 };
