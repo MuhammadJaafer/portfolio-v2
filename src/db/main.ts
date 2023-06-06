@@ -3,6 +3,7 @@ import myImage from "../../public/images/muhammad.png";
 import mutahItImg from "../../public/images/mutah-it.png";
 import randQuoteImg from "../../public/images/randquote.png";
 import redditCloneImg from "../../public/images/reddit-clone.png";
+import theDojoImg from "../../public/images/the-dojo.png";
 export const heroData = {
   img: myImage,
   hi: "Hello! I am",
@@ -135,16 +136,6 @@ export const ProjectsData = {
       codeUrl: "https://github.com/MuhammadJaafer/bookie",
     },
     {
-      name: "Mutah IT",
-      technologies: ["JavaScript", "React", "Styled-Components", "Firebase"],
-      image: mutahItImg,
-      description:
-        "A one-stop destination for IT students at Mutah University, the platform provides a wealth of resources, including course explanations, study plans, and trial exams specifically designed for all IT majors at Mutah University.",
-
-      demoUrl: "https://mutah-it.com/",
-      codeUrl: "",
-    },
-    {
       name: "Reddit Clone",
       image: redditCloneImg,
       technologies: [
@@ -159,6 +150,25 @@ export const ProjectsData = {
         "A fully functional Reddit clone built with the latest technology in the web development field, allowing users to create communities, as well as create, post, and upvote content, comment on and vote on other users' content.",
       demoUrl: "https://m7-reddit-clone.vercel.app/",
       codeUrl: "https://github.com/MuhammadJaafer/reddit-clone",
+    },
+    {
+      name: "Mutah IT",
+      technologies: ["JavaScript", "React", "Styled-Components", "Firebase"],
+      image: mutahItImg,
+      description:
+        "A one-stop destination for IT students at Mutah University, the platform provides a wealth of resources, including course explanations, study plans, and trial exams specifically designed for all IT majors at Mutah University.",
+
+      demoUrl: "https://mutah-it.com/",
+      codeUrl: "",
+    },
+    {
+      name: "The Dojo",
+      image: theDojoImg,
+      technologies: ["React", "CSS Module", "Firebase"],
+      description:
+        "The Dojo is a project management website that offers a plethora of useful features, including tools for assigning tasks and real-time communication with team members. It also incorporates a custom-made authentication system to ensure secure access and user management.",
+      demoUrl: "https://the-dojo-app.netlify.app/",
+      codeUrl: "https://github.com/MuhammadJaafer/the-dojo",
     },
     {
       name: "RandQuote",
