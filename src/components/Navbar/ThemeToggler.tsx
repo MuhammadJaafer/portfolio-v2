@@ -28,7 +28,7 @@ const ThemeToggler: React.FC<ThemeTogglerProps> = () => {
           if (newTheme === "light") {
             logEvent(getAnalytics(), `Switch To Light Theme`);
           } else {
-            logEvent(getAnalytics(), `Switch To Light DarkTheme`);
+            logEvent(getAnalytics(), `Switch To Dark Theme`);
           }
           setTheme(newTheme);
           if (soundStateValue.SoundActive) {
