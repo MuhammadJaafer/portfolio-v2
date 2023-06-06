@@ -6,6 +6,7 @@ import React from "react";
 import { useRecoilState } from "recoil";
 import useSound from "use-sound";
 
+import { getAnalytics, logEvent } from "firebase/analytics";
 import styles from "../../styles/components/Navbar.module.scss";
 type ThemeTogglerProps = {};
 
@@ -24,6 +25,11 @@ const ThemeToggler: React.FC<ThemeTogglerProps> = () => {
         className={`${styles.navbar_right_list_item_toggler_theme}`}
         onClick={() => {
           const newTheme = theme === "dark" ? "light" : "dark";
+          if (newTheme === "light") {
+            logEvent(getAnalytics(), `Switch To Light Theme`);
+          } else {
+            logEvent(getAnalytics(), `Switch To Light DarkTheme`);
+          }
           setTheme(newTheme);
           if (soundStateValue.SoundActive) {
             PlayThemeSwitch();
@@ -36,6 +42,11 @@ const ThemeToggler: React.FC<ThemeTogglerProps> = () => {
       <div
         onClick={() => {
           soundStateValue.SoundActive ? PlaySoundOff() : PlaySoundOn();
+          if (soundStateValue.SoundActive) {
+            logEvent(getAnalytics(), `Turn Off Sounds`);
+          } else {
+            logEvent(getAnalytics(), `Turn On Sounds`);
+          }
           setSoundState((prev) => ({
             ...prev,
             SoundActive: !prev.SoundActive,

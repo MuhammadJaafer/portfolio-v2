@@ -1,6 +1,7 @@
 "use client";
 import { soundState } from "@/atoms/SoundAtom";
 import { Icon } from "@iconify/react";
+import { getAnalytics, logEvent } from "firebase/analytics";
 import { motion } from "framer-motion";
 import React from "react";
 import { useRecoilValue } from "recoil";
@@ -69,6 +70,7 @@ const Links: React.FC<LinksProps> = () => {
           if (SoundActive) {
             playClick();
           }
+          logEvent(getAnalytics(), `Email Side Links`);
         }}
       >
         <Icon className={`${styles.links_link_icon}`} icon={"mi:email"} />
@@ -83,6 +85,7 @@ const Links: React.FC<LinksProps> = () => {
           if (SoundActive) {
             playClick();
           }
+          logEvent(getAnalytics(), `LinkedIn Side Links`);
         }}
       >
         <Icon className={`${styles.links_link_icon}`} icon={"mdi:linkedin"} />
@@ -97,6 +100,7 @@ const Links: React.FC<LinksProps> = () => {
           if (SoundActive) {
             playClick();
           }
+          logEvent(getAnalytics(), `Github Side Links`);
         }}
       >
         <Icon className={`${styles.links_link_icon}`} icon={"mdi:github"} />
