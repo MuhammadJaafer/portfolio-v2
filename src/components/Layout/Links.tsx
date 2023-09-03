@@ -78,7 +78,7 @@ const Links: React.FC<LinksProps> = () => {
       <motion.a
         variants={childVariants}
         className={`${styles.links_link}`}
-        href="https://www.linkedin.com/in/muhammad-jaafar-a099801a9/"
+        href="https://www.linkedin.com/in/muhammad-dawahreh/"
         target="_blank"
         aria-label="linkedin"
         onClick={() => {
