@@ -106,7 +106,7 @@ export const contactData = {
     },
     {
       label: "LinkedIn",
-      url: "https://www.linkedin.com/in/muhammad-jaafar-a099801a9/",
+      url: "https://www.linkedin.com/in/muhammad-dawahreh/",
     },
     {
       label: "Resume",
