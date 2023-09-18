@@ -135,6 +135,7 @@ export const ProjectsData = {
       description:
         "Qarora is a groundbreaking platform redefining water bottle orders in Jordan. With categorized stations, detailed pages, and an admin panel for easy management, Qarora ensures a seamless experience.",
       demoUrl: "https://qwater-jo.com",
+      codeUrl: "",
     },
     {
       name: "Bookie",
