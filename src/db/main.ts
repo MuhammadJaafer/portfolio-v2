@@ -1,9 +1,11 @@
+import qaroraImg from "../../public/images/qarora.png";
 import bookieImg from "../../public/images/bookie.png";
 import myImage from "../../public/images/muhammad.png";
 import mutahItImg from "../../public/images/mutah-it.png";
 import randQuoteImg from "../../public/images/randquote.png";
 import redditCloneImg from "../../public/images/reddit-clone.png";
 import theDojoImg from "../../public/images/the-dojo.png";
+
 export const heroData = {
   img: myImage,
   hi: "Hello! I am",
@@ -118,6 +120,22 @@ export const contactData = {
 export const ProjectsData = {
   title: "Projects",
   Projects: [
+    {
+      name: "Qarora",
+      image: qaroraImg,
+      technologies: [
+        "TypeScript",
+        "Next",
+        "React",
+        "TailwindCss",
+        "Firebase",
+        "React Hook Form",
+        "Zod",
+      ],
+      description:
+        "Qarora is a groundbreaking platform redefining water bottle orders in Jordan. With categorized stations, detailed pages, and an admin panel for easy management, Qarora ensures a seamless experience.",
+      demoUrl: "https://qwater-jo.com",
+    },
     {
       name: "Bookie",
       image: bookieImg,
