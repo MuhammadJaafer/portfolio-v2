@@ -5,6 +5,7 @@ import mutahItImg from "../../public/images/mutah-it.png";
 import randQuoteImg from "../../public/images/randquote.png";
 import redditCloneImg from "../../public/images/reddit-clone.png";
 import theDojoImg from "../../public/images/the-dojo.png";
+import shawerrImg from "../../public/images/shawerr.png";
 
 export const heroData = {
   img: myImage,
@@ -120,6 +121,21 @@ export const contactData = {
 export const ProjectsData = {
   title: "Projects",
   Projects: [
+    {
+      name: "Shawerr",
+      image: shawerrImg,
+      technologies: [
+        "TypeScript",
+        "SvelteKit",
+        "Svelte",
+        "TailwindCss",
+        "Firebase",
+      ],
+      description:
+        "Comprehensive consultant for rebuilding and establishing new products, safety inspection, and product evaluation.",
+      demoUrl: "https://shawerr.com",
+      codeUrl: "",
+    },
     {
       name: "Qarora",
       image: qaroraImg,
