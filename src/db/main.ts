@@ -6,14 +6,15 @@ import randQuoteImg from "../../public/images/randquote.png";
 import redditCloneImg from "../../public/images/reddit-clone.png";
 import theDojoImg from "../../public/images/the-dojo.png";
 import shawerrImg from "../../public/images/shawerr.png";
+import arabicPoetryImg from "../../public/images/arabic-poetry.png";
 
 export const heroData = {
   img: myImage,
   hi: "Hello! I am",
   name: "Muhammad Jaafar",
-  expertise: ["Front-End Developer", "UI/UX Designer"],
+  expertise: ["Software Engineer", "UI/UX Designer"],
   about:
-    "I'm a passionate junior Front-End Developer based in Jordan, currently studying Software Engineering with a strong interest in UI/UX design. I'm committed to creating visually stunning and user-friendly websites, and I'm looking forward to exploring new opportunities to enhance my skills.",
+    "I'm a passionate Software Engineer based in Jordan, currently studying Software Engineering. Alongside my studies, I'm working as a Software Development Engineer intern at Amazon and am the founder of Arabic-Poetry.net. I have a strong interest in UI/UX design and am committed to creating visually stunning and user-friendly websites. I'm looking forward to exploring new opportunities to enhance my skills.",
   btnText: "Get my resume",
 };
 
@@ -26,7 +27,7 @@ export const aboutData = {
     },
     {
       title: "Present",
-      text: "Now, as a software engineering student at Mutah University, I am pursuing my dream of becoming a professional programmer. I also work as a freelance web developer, which has allowed me to apply my skills in real-world projects and gain practical experience.",
+      text: "Currently, I am a software engineering student at Mutah University. I am also a Software Development Engineer intern at Amazon, where I gain valuable experience in a professional setting. Additionally, I am the founder of Arabic-Poetry.net, a platform dedicated to Arabic poetry.",
     },
     {
       title: "Future",
@@ -121,6 +122,23 @@ export const contactData = {
 export const ProjectsData = {
   title: "Projects",
   Projects: [
+    {
+      name: "Arabic Poetry",
+      image: arabicPoetryImg,
+      technologies: [
+        "TypeScript",
+        "Next.js",
+        "React",
+        "AWS",
+        "Web Scraping",
+        "PostgreSQL",
+        "TailwindCss",
+      ],
+      description:
+        "The Arabic Poetry Platform offers over 160,000 poems from more than 6,000 poets, ranging from the pre-Islamic era to modern times. As the founder, I created this user-friendly site to enhance access to Arabic poetry through AI-powered categorization, a design tool for creating engaging graphics, AI explanations for complex verses, and an interactive community for sharing and discussion. This project combines technology and literature, making Arabic poetry accessible to all.",
+      demoUrl: "https://arabic-poetry.net",
+      codeUrl: "",
+    },
     {
       name: "Shawerr",
       image: shawerrImg,
